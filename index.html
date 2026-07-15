@@ -103,7 +103,15 @@
             color-scheme: light only;
         }
         body {
-            background-color: #fbfaf2;
+            background-color: #f6f4ea;
+            background-image:
+                radial-gradient(900px 500px at 10% -8%, rgba(249, 220, 220, 0.40), transparent 60%),
+                radial-gradient(900px 550px at 90% 10%, rgba(180, 205, 184, 0.38), transparent 55%),
+                radial-gradient(800px 650px at 50% 108%, rgba(217, 194, 178, 0.32), transparent 60%),
+                radial-gradient(circle, rgba(27, 28, 23, 0.04) 1px, transparent 1px);
+            background-size: auto, auto, auto, 24px 24px;
+            background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+            background-attachment: fixed, fixed, fixed, fixed;
             color: #1b1c17;
             overflow-x: hidden;
             scroll-behavior: smooth;
@@ -142,9 +150,69 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        html.intro-locked, html.intro-locked body {
+            overflow: hidden;
+            height: 100%;
+        }
+        #intro-splash {
+            transition: opacity 0.9s ease, visibility 0.9s ease;
+            background: radial-gradient(ellipse 90% 65% at 50% 28%, #24402c 0%, #16281c 48%, #0c1811 100%);
+        }
+        #intro-splash.intro-hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+        #intro-splash .intro-bloom {
+            animation: introZoom 7s ease-out forwards;
+        }
+        .intro-item {
+            opacity: 0;
+            transform: translateY(18px);
+            animation: introFadeUp 0.9s ease-out forwards;
+        }
+        @keyframes introFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes introZoom {
+            from { transform: scale(1.08); opacity: 0.5; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .intro-title {
+            font-size: clamp(26px, 7vw, 40px);
+        }
+        .intro-date {
+            font-size: clamp(32px, 9vw, 56px);
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md">
+<!-- INTRO SPLASH ANIMATION (plays once on load, then fades out) -->
+<div class="fixed inset-0 z-[200] flex flex-col items-center justify-center text-center overflow-hidden" id="intro-splash">
+<div class="intro-bloom absolute inset-0 flex items-center justify-center opacity-80">
+<svg class="w-[140vw] h-[140vw] max-w-none md:w-[70vw] md:h-[70vw]" fill="none" viewbox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+<circle cx="300" cy="300" fill="none" opacity="0.35" r="230" stroke="#d9c2b2" stroke-width="1"/>
+<circle cx="300" cy="300" fill="none" opacity="0.2" r="270" stroke="#d9c2b2" stroke-width="1"/>
+<g opacity="0.55" stroke="#b4cdb8" stroke-linecap="round" stroke-width="2">
+<path d="M300 90 C 270 130, 260 160, 300 200 C 340 160, 330 130, 300 90 Z"/>
+<path d="M255 100 C 235 130, 232 150, 258 172"/>
+<path d="M345 100 C 365 130, 368 150, 342 172"/>
+<path d="M300 510 C 270 470, 260 440, 300 400 C 340 440, 330 470, 300 510 Z"/>
+<path d="M255 500 C 235 470, 232 450, 258 428"/>
+<path d="M345 500 C 365 470, 368 450, 342 428"/>
+</g>
+</svg>
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/45"></div>
+<div class="relative z-10 max-w-xl px-margin-mobile w-full">
+<span class="material-symbols-outlined intro-item text-secondary-fixed-dim text-3xl mb-6" style="animation-delay:.3s; font-variation-settings: 'FILL' 1;">favorite</span>
+<p class="intro-item font-label-md text-label-md tracking-[0.3em] text-secondary-fixed-dim opacity-90 mb-6" style="animation-delay:.7s;">ЛАСКАВО ПРОСИМО</p>
+<h2 class="intro-item intro-title font-display-lg text-surface-container-lowest italic leading-relaxed mb-6" style="animation-delay:1.1s;">
+                Дорогі рідні та друзі!
+            </h2>
+<div class="intro-item intro-date font-date-display text-surface-container-lowest" style="animation-delay:1.5s;">19.09.2026</div>
+</div>
+</div>
 <!-- Top AppBar (Navigation Shell) -->
 <header class="bg-surface/80 font-display-lg text-headline-lg-mobile text-primary docked full-width top-0 sticky backdrop-blur-md z-[100] flex justify-center md:justify-between items-center px-gutter w-full h-16 flat no shadows">
 <div class="font-display-lg text-headline-lg-mobile text-primary tracking-widest md:block">
@@ -328,6 +396,28 @@
 </a>
 </footer>
 <script>
+        // Intro splash animation: lock scroll, play sequence, then reveal the site
+        (function () {
+            const html = document.documentElement;
+            const splash = document.getElementById('intro-splash');
+            html.classList.add('intro-locked');
+
+            let dismissed = false;
+            function dismissIntro() {
+                if (dismissed) return;
+                dismissed = true;
+                splash.classList.add('intro-hide');
+                html.classList.remove('intro-locked');
+                setTimeout(() => { splash.style.display = 'none'; }, 900);
+            }
+
+            const autoTimer = setTimeout(dismissIntro, 4200);
+            splash.addEventListener('click', () => {
+                clearTimeout(autoTimer);
+                dismissIntro();
+            });
+        })();
+
         // Reveal on scroll logic
         const observerOptions = {
             threshold: 0.1
