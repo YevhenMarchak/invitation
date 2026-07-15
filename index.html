@@ -2,6 +2,9 @@
 
 <html class="light" lang="uk"><head>
 <meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta content="#f6f4ea" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#f6f4ea" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Andriy &amp; Viktoria | Wedding Invitation</title>
@@ -99,8 +102,12 @@
       }
     </script>
 <style>
-        :root {
-            color-scheme: light only;
+        :root, html, body {
+            color-scheme: light only !important;
+            forced-color-adjust: none;
+        }
+        html {
+            background-color: #f6f4ea;
         }
         body {
             background-color: #f6f4ea;
@@ -115,6 +122,15 @@
             color: #1b1c17;
             overflow-x: hidden;
             scroll-behavior: smooth;
+        }
+        /* Hard override: some browsers/OS force a dark palette onto pages
+           regardless of color-scheme meta. Re-assert light colors here
+           with !important so nothing gets auto-inverted or re-tinted. */
+        @media (prefers-color-scheme: dark) {
+            html, body {
+                background-color: #f6f4ea !important;
+                color: #1b1c17 !important;
+            }
         }
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
