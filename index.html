@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uk"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Andrij &amp; Wiktoria | Wedding Invitation</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#061b0e",
+                    "tertiary": "#221313",
+                    "secondary-fixed-dim": "#d9c2b2",
+                    "surface-container-lowest": "#ffffff",
+                    "on-error": "#ffffff",
+                    "on-surface": "#1b1c17",
+                    "on-error-container": "#93000a",
+                    "on-surface-variant": "#434843",
+                    "on-tertiary-fixed": "#271718",
+                    "surface-container-highest": "#e3e3db",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4cdb8",
+                    "inverse-primary": "#b4cdb8",
+                    "on-primary-fixed": "#0b2013",
+                    "surface": "#fbfaf2",
+                    "secondary-fixed": "#f6decd",
+                    "inverse-surface": "#30312c",
+                    "tertiary-fixed-dim": "#dcc0c0",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#1b3022",
+                    "background": "#fbfaf2",
+                    "on-secondary-container": "#726153",
+                    "surface-tint": "#4d6453",
+                    "tertiary-fixed": "#f9dcdc",
+                    "outline-variant": "#c3c8c1",
+                    "secondary-container": "#f6decd",
+                    "surface-bright": "#fbfaf2",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#25190f",
+                    "on-background": "#1b1c17",
+                    "inverse-on-surface": "#f2f1e9",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#dbdad3",
+                    "surface-variant": "#e3e3db",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-container": "#a68d8d",
+                    "surface-container-low": "#f5f4ec",
+                    "secondary": "#6c5b4e",
+                    "primary-fixed": "#d0e9d4",
+                    "outline": "#737973",
+                    "on-primary-container": "#819986",
+                    "surface-container": "#efeee6",
+                    "tertiary-container": "#382727",
+                    "on-primary-fixed-variant": "#364c3c",
+                    "on-tertiary-fixed-variant": "#564242",
+                    "on-secondary-fixed-variant": "#534437",
+                    "surface-container-high": "#e9e8e1"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "gutter": "24px",
+                    "section-gap": "80px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "container-max": "1100px"
+            },
+            "fontFamily": {
+                    "label-md": ["Work Sans"],
+                    "headline-lg-mobile": ["Playfair Display"],
+                    "body-md": ["Work Sans"],
+                    "body-lg": ["Work Sans"],
+                    "headline-lg": ["Playfair Display"],
+                    "date-display": ["Playfair Display"],
+                    "display-lg": ["Playfair Display"]
+            },
+            "fontSize": {
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "date-display": ["64px", {"lineHeight": "64px", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #fbfaf2;
+            color: #1b1c17;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .heart-highlight {
+            position: relative;
+        }
+        .heart-highlight::after {
+            content: 'favorite';
+            font-family: 'Material Symbols Outlined';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2.5rem;
+            color: #dcc0c0;
+            z-index: 0;
+            opacity: 0.6;
+            font-variation-settings: 'FILL' 1;
+        }
+        .parallax-bg {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md">
+<!-- Top AppBar (Navigation Shell) -->
+<header class="bg-surface/80 dark:bg-surface-container/80 font-display-lg text-headline-lg-mobile text-primary dark:text-inverse-primary docked full-width top-0 sticky backdrop-blur-md z-[100] flex justify-between items-center px-gutter w-full h-16 flat no shadows">
+<div class="font-display-lg text-headline-lg-mobile text-primary dark:text-inverse-primary tracking-widest">
+            A &amp; W
+        </div>
+<nav class="hidden md:flex gap-8">
+<a class="text-primary font-bold hover:opacity-70 transition-opacity font-label-md text-label-md" href="#story">STORY</a>
+<a class="text-outline hover:opacity-70 transition-opacity font-label-md text-label-md" href="#events">EVENTS</a>
+<a class="text-outline hover:opacity-70 transition-opacity font-label-md text-label-md" href="#dresscode">DRESS CODE</a>
+<a class="text-outline hover:opacity-70 transition-opacity font-label-md text-label-md" href="#rsvp">RSVP</a>
+</nav>
+<button class="md:hidden">
+<span class="material-symbols-outlined text-primary">menu</span>
+</button>
+</header>
+<main class="max-w-[1100px] mx-auto px-4 md:px-0">
+<!-- SECTION 1: COVER -->
+<section class="min-h-screen flex flex-col items-center justify-center pt-16 pb-section-gap text-center" id="cover">
+<div class="mb-8 tracking-[0.3em] font-label-md text-label-md text-secondary opacity-80 reveal">ВЕСІЛЛЯ</div>
+<h1 class="font-display-lg text-display-lg md:text-[80px] text-primary mb-12 reveal">
+                Андрій &amp; Вікторія
+            </h1>
+<div class="relative w-full max-w-2xl aspect-[3/4] mb-12 overflow-hidden reveal">
+<img class="w-full h-full object-cover" data-alt="A cinematic, high-fashion editorial wedding photograph of a couple embracing in a sun-drenched minimalist garden. The lighting is soft and golden, highlighting the textures of a silk gown and a dark tailored suit. The aesthetic is clean and modern with a romantic, timeless atmosphere, using a palette of cream, deep green, and soft brown tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPWOBaxTCfXcK7xtilFUvDS-9V_T7rmuSSmfiLhAsbjlLwkEtC9KfDJDOAd9ITUa_Gc7FICKenJT8HuQn-6Bv0I2FQQc_RCxVtlkbpM3w_btJ-xg3u6bn8RdD4LMHIBFQOF0mWwstNNvb7l00H-QENf37G5uC6sgQBvkqNr1BLjQ2F1pL9hacKlU8222jV1qw8Zl2u9VH2uumQUs27E6VpLiYIfimBrx9l7xUC4KS-juNTR18AcPqmZH4kvUjJWE1M_D8zB5pTc3o6"/>
+</div>
+<div class="font-date-display text-date-display text-primary reveal">19.09.2026</div>
+</section>
+<!-- SECTION 2: INVITATION TEXT -->
+<section class="py-section-gap flex flex-col items-center text-center reveal" id="story">
+<div class="max-w-2xl px-margin-mobile">
+<span class="material-symbols-outlined text-secondary text-4xl mb-6">favorite</span>
+<p class="font-display-lg text-headline-lg text-primary italic leading-relaxed">
+                    «Одне запитання. Найвпевненіше в житті «так».»
+                </p>
+<div class="w-16 h-px bg-outline/20 mx-auto my-12"></div>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto">
+                    Ми щиро запрошуємо вас розділити з нами цей особливий момент, коли дві історії стають однією. Ваша присутність зробить наше свято по-справжньому незабутнім.
+                </p>
+</div>
+</section>
+<!-- SECTION 3: CALENDAR -->
+<section class="py-section-gap flex flex-col items-center reveal">
+<div class="bg-surface-container-low p-12 rounded-lg border border-outline/10 w-full max-w-md">
+<h3 class="font-display-lg text-headline-lg text-center text-primary mb-8">Вересень 2026</h3>
+<div class="grid grid-cols-7 gap-y-4 text-center font-label-md text-label-md text-on-surface-variant">
+<div>ПН</div><div>ВТ</div><div>СР</div><div>ЧТ</div><div>ПТ</div><div>СБ</div><div>НД</div>
+<!-- Empty slots for alignment if Sep 1st 2026 is Tuesday -->
+<div class="py-2 opacity-20">31</div>
+<div class="py-2">1</div><div class="py-2">2</div><div class="py-2">3</div><div class="py-2">4</div><div class="py-2">5</div><div class="py-2">6</div>
+<div class="py-2">7</div><div class="py-2">8</div><div class="py-2">9</div><div class="py-2">10</div><div class="py-2">11</div><div class="py-2">12</div><div class="py-2">13</div>
+<div class="py-2">14</div><div class="py-2">15</div><div class="py-2">16</div><div class="py-2">17</div><div class="py-2">18</div>
+<div class="py-2 heart-highlight font-bold text-primary relative z-10">19</div>
+<div class="py-2">20</div>
+<div class="py-2">21</div><div class="py-2">22</div><div class="py-2">23</div><div class="py-2">24</div><div class="py-2">25</div><div class="py-2">26</div><div class="py-2">27</div>
+<div class="py-2">28</div><div class="py-2">29</div><div class="py-2">30</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: CEREMONY -->
+<section class="py-section-gap grid md:grid-cols-2 gap-12 items-center reveal" id="events">
+<div class="order-2 md:order-1">
+<div class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md mb-6">11:00</div>
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Таїнство вінчання</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
+                    Урочиста церемонія відбудеться в атмосфері спокою та величі старовинного костелу.
+                </p>
+<div class="flex items-start gap-3 mb-8">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<div>
+<p class="font-label-md text-label-md font-bold text-primary">Kostel svaté Kateřiny</p>
+<p class="text-on-surface-variant">Všehrdova, Praha</p>
+</div>
+</div>
+<button class="px-8 py-4 bg-primary text-surface font-label-md text-label-md rounded-full hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">map</span>
+                    ВІДКРИТИ КАРТУ
+                </button>
+</div>
+<div class="order-1 md:order-2 aspect-[4/5] overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover" data-alt="A grand, architectural shot of an ancient European church interior with soaring vaulted ceilings and minimalist stone textures. Soft, natural light filters through tall stained-glass windows, creating an ethereal and sacred atmosphere. The image is clean, airy, and high-end, focusing on the timeless beauty of the sacred space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCTnflEEPRXp94mwYowj1-BskN8Xbk7wjwOwzmRBwo83F1UOfh7rGiCn5DPA28YpwxT-tKlQR9BVgPN0pUGQMHmOcCA4pI-iZbv_ROx4mREN8bb6hWujQdNiGMl0RMef1pN6x-0AmwiJIeFvSOw5uZogI8UXnCALYJHJRd-kjIo1F1dCTOrAzwTQCW0HEfnMQBf8A8sEYof2DVWrFv7faXDG5O4q82Nee9HQ3-yl6MuIdt2cwJWTyM4FkmPJrc05Jt-HCaNeWnMmvP"/>
+</div>
+</section>
+<!-- SECTION 5: RECEPTION -->
+<section class="py-section-gap flex flex-col items-center reveal">
+<div class="w-full mb-12 text-center">
+<div class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md mb-6">15:00</div>
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Святкова частина</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">citadela hall</p>
+</div>
+<div class="w-full grid md:grid-cols-12 gap-8 items-stretch">
+<div class="md:col-span-7 aspect-video bg-surface-variant rounded-lg overflow-hidden border border-outline/10">
+<!-- Map Mockup -->
+<div class="w-full h-full bg-cover bg-center grayscale opacity-70 hover:grayscale-0 transition-all duration-700 cursor-pointer" data-location="Prague" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCn3o-9fkuoHiEBAcS0_FAGEF8_HNVYcHI4byK-mn7HINuwuVaZs_NUsYTKJ3gAPAX7Zv--f69XZeRh_BgNNFOYYbgRxF6adAspsaZAbZUO-COjb38iG0vlddj77ocMT8vIdMvqv-lC6_OVIN_o_N17TnWvzW0CqXndf-RWd7dGhy4m2vsiOCf6nZ_M6OTzW9Wg2VDUpZZynvds82m4Tt0q1Ty7SkzrQvwF43JjhXKxwbhqZUtBd47Xy1eLRtvqWGglDpWvbq9eToL_')">
+<div class="w-full h-full flex items-center justify-center">
+<div class="bg-primary text-surface px-6 py-3 rounded-full font-label-md text-label-md shadow-xl flex items-center gap-2">
+<span class="material-symbols-outlined">explore</span>
+                                ПОБУДУВАТИ МАРШРУТ
+                            </div>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center p-8 bg-surface-container-low rounded-lg border border-outline/5">
+<h4 class="font-display-lg text-headline-lg text-primary mb-6">Що на вас чекає</h4>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">local_bar</span>
+<span class="text-on-surface-variant">Welcome drink та легкі закуски на терасі</span>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">restaurant</span>
+<span class="text-on-surface-variant">Гала-вечеря від шеф-кухаря</span>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-secondary">nightlife</span>
+<span class="text-on-surface-variant">Танці та святкова програма до опівночі</span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- SECTION 6: DRESS CODE -->
+<section class="py-section-gap reveal" id="dresscode">
+<div class="text-center mb-16">
+<h2 class="font-display-lg text-display-lg text-primary mb-4">Dress Code</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto">
+                    Ми будемо вдячні, якщо ви підтримаєте колірну гаму нашого свята у вашому вбранні.
+                </p>
+</div>
+<!-- Palette -->
+<div class="flex flex-wrap justify-center gap-4 mb-20">
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full bg-[#000000] border border-outline/10"></div>
+<span class="font-label-md text-[10px] tracking-tighter">BLACK</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full bg-[#3d2b1f] border border-outline/10"></div>
+<span class="font-label-md text-[10px] tracking-tighter">ESPRESSO</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full bg-[#8b7355] border border-outline/10"></div>
+<span class="font-label-md text-[10px] tracking-tighter">EARTH</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full bg-[#1b3022] border border-outline/10"></div>
+<span class="font-label-md text-[10px] tracking-tighter">FOREST</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full bg-[#b4cdb8] border border-outline/10"></div>
+<span class="font-label-md text-[10px] tracking-tighter">SAGE</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full bg-[#f9dcdc] border border-outline/10"></div>
+<span class="font-label-md text-[10px] tracking-tighter">BLUSH</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-full bg-[#fbfaf2] border border-outline/10"></div>
+<span class="font-label-md text-[10px] tracking-tighter">CREAM</span>
+</div>
+</div>
+<!-- Style Guide -->
+<div class="grid md:grid-cols-2 gap-12">
+<!-- For Women -->
+<div class="bg-white p-8 rounded-lg shadow-sm border border-outline/5 hover:border-outline/20 transition-all">
+<div class="aspect-[4/5] mb-8 overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover grayscale-[30%]" data-alt="High-end fashion editorial showing a woman in a sophisticated silk evening gown in an earthy forest green color. The setting is a minimalist, modern room with clean lines and soft lighting. The mood is elegant and refined, emphasizing textured fabrics and a luxury wedding guest aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAOZHnhrdzQs-xaujaVLMmbNEoyKoGM7EppV6IyGiBWnRtBUrMoV_21LYRBtfVeL9ldYbIP-P88KAjFy5XND3C9Yj1PO0me-Yjl_ij5fQE2nBObB8MAjOnChviYp1mhqC9I2ke-711Gc0D_TE-a_YAKSRjIOrqa9uJIqXfLSR84ZU0H8b4Xbb1i1HEe2xSCn7Fy9Iwt1kj5-6BtYQ5Y7UcQiaU_9jh-B3m3s6tt2mpakfBYuy4s_2cJdGWS1bafC3oZIqB6vkLmV_W"/>
+</div>
+<h3 class="font-display-lg text-headline-lg text-primary mb-4">Для жінок</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Витончені вечірні або коктейльні сукні в обраній палітрі. Ми рекомендуємо уникати білого кольору.
+                    </p>
+</div>
+<!-- For Men -->
+<div class="bg-white p-8 rounded-lg shadow-sm border border-outline/5 hover:border-outline/20 transition-all">
+<div class="aspect-[4/5] mb-8 overflow-hidden rounded-sm">
+<img class="w-full h-full object-cover grayscale-[30%]" data-alt="High-end fashion editorial of a man in a perfectly tailored dark espresso-toned suit, standing in a minimalist architecturally striking space. The lighting is focused and dramatic yet soft, showcasing the high-quality fabric and precise tailoring. The overall style is modern-classic and luxurious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtblevRLHCaDQlrJXsGod0NShrL5CUAOUF5dTwXjTv8k8r9fmMw0HKIPurufJUX1rKTWejNuuQk5c0dadj0r3DC5ZB2GZ-4lF7vVd3fTZKD9uPf-l5Zjxj1EvbkdOWnTPeFTfGR0G2Pj3_Ujiu07lhG5gPjdVGK_IXL34Y0fhgkqtHGqBj4rGF0hcUQ5QjS60gBfchD0kXGfrqRjE2uSi5lXMmHw8qs-k-764-01p5HGGOxwoCKxJNBJte6ax4hcWg9Fq8vChqKBQR"/>
+</div>
+<h3 class="font-display-lg text-headline-lg text-primary mb-4">Для чоловіків</h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                        Класичні костюми або смокінги. Темні відтінки (чорний, еспресо, форест) підкреслять урочистість події.
+                    </p>
+</div>
+</div>
+</section>
+<!-- FOOTER / RSVP CTA -->
+<section class="py-section-gap flex flex-col items-center text-center reveal" id="rsvp">
+<h2 class="font-display-lg text-display-lg text-primary mb-8">Чекаємо на вас</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-12 max-w-lg">
+                Будь ласка, підтвердіть вашу присутність до 1 серпня 2026 року.
+            </p>
+<button class="px-12 py-5 bg-primary text-surface font-label-md text-label-md rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300">
+                ПІДТВЕРДИТИ ПРИСУТНІСТЬ
+            </button>
+<div class="mt-20 mb-10 text-outline/40 font-display-lg italic text-headline-lg">
+                Andrij &amp; Wiktoria
+            </div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<footer class="md:hidden bg-surface dark:bg-inverse-surface border-t border-outline/10 shadow-[0_-4px_20px_0_rgba(77,100,83,0.05)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 rounded-t-full">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-95 transition-transform duration-200" href="#cover">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span class="font-label-md text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200" href="#events">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-label-md text-[10px]">Event</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200" href="#events">
+<span class="material-symbols-outlined">location_on</span>
+<span class="font-label-md text-[10px]">Places</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200" href="#dresscode">
+<span class="material-symbols-outlined">palette</span>
+<span class="font-label-md text-[10px]">Style</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200" href="#rsvp">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-label-md text-[10px]">RSVP</span>
+</a>
+</footer>
+<script>
+        // Reveal on scroll logic
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body></html>
