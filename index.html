@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 <html class="light" lang="uk"><head>
+<meta name="color-scheme" content="light only">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Andriy &amp; Viktoria | Wedding Invitation</title>
@@ -98,6 +99,9 @@
       }
     </script>
 <style>
+        :root {
+            color-scheme: light only;
+        }
         body {
             background-color: #fbfaf2;
             color: #1b1c17;
@@ -138,29 +142,39 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
+        /* Force single-line title on mobile with shrinking font */
+        @media (max-width: 767px) {
+            .hero-title {
+                white-space: nowrap;
+                font-size: clamp(24px, 9vw, 48px);
+                line-height: 1.2;
+            }
+            .ceremony-title {
+                white-space: nowrap;
+                font-size: clamp(24px, 9vw, 48px);
+                line-height: 1.2;
+            }
+        }
     </style>
 </head>
 <body class="font-body-md text-body-md">
 <!-- Top AppBar (Navigation Shell) -->
-<header class="bg-surface/80 dark:bg-surface-container/80 font-display-lg text-headline-lg-mobile text-primary dark:text-inverse-primary docked full-width top-0 sticky backdrop-blur-md z-[100] flex justify-between items-center px-gutter w-full h-16 flat no shadows">
-<div class="font-display-lg text-headline-lg-mobile text-primary dark:text-inverse-primary tracking-widest">
+<header class="bg-surface/80 font-display-lg text-headline-lg-mobile text-primary docked full-width top-0 sticky backdrop-blur-md z-[100] flex justify-center md:justify-between items-center px-gutter w-full h-16 flat no shadows">
+<div class="font-display-lg text-headline-lg-mobile text-primary tracking-widest md:block">
             A &amp; V
         </div>
 <nav class="hidden md:flex gap-8">
-<a class="text-primary font-bold hover:opacity-70 transition-opacity font-label-md text-label-md" href="#story">STORY</a>
+<a class="text-primary font-bold hover:opacity-70 transition-opacity font-label-md text-label-md" href="#invitation">STORY</a>
 <a class="text-outline hover:opacity-70 transition-opacity font-label-md text-label-md" href="#events">EVENTS</a>
 <a class="text-outline hover:opacity-70 transition-opacity font-label-md text-label-md" href="#dresscode">DRESS CODE</a>
 <a class="text-outline hover:opacity-70 transition-opacity font-label-md text-label-md" href="#rsvp">RSVP</a>
 </nav>
-<button class="md:hidden">
-<span class="material-symbols-outlined text-primary">menu</span>
-</button>
 </header>
 <main class="max-w-[1100px] mx-auto px-4 md:px-0">
 <!-- SECTION 1: COVER -->
 <section class="min-h-screen flex flex-col items-center justify-center pt-16 pb-section-gap text-center" id="cover">
 <div class="mb-8 tracking-[0.3em] font-label-md text-label-md text-secondary opacity-80 reveal">ВЕСІЛЛЯ</div>
-<h1 class="font-display-lg text-display-lg md:text-[80px] text-primary mb-12 reveal">
+<h1 class="font-display-lg text-display-lg md:text-[80px] text-primary mb-12 reveal hero-title">
                 Андрій &amp; Вікторія
             </h1>
 <div class="relative w-full max-w-2xl aspect-[3/4] mb-12 overflow-hidden reveal">
@@ -169,7 +183,7 @@
 <div class="font-date-display text-date-display text-primary reveal">19.09.2026</div>
 </section>
 <!-- SECTION 2: INVITATION TEXT -->
-<section class="py-section-gap flex flex-col items-center text-center reveal" id="story">
+<section class="py-section-gap flex flex-col items-center text-center reveal" id="invitation">
 <div class="max-w-2xl px-margin-mobile">
 <span class="material-symbols-outlined text-secondary text-4xl mb-6">favorite</span>
 <p class="font-display-lg text-headline-lg text-primary italic leading-relaxed">
@@ -200,10 +214,11 @@
 </div>
 </section>
 <!-- SECTION 4: CEREMONY -->
-<section class="py-section-gap grid md:grid-cols-2 gap-12 items-center reveal" id="events">
+<section class="py-section-gap reveal" id="events">
+<div class="flex flex-col md:grid md:grid-cols-2 gap-12 md:items-center">
 <div class="order-2 md:order-1">
-<div class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md mb-6">11:00</div>
-<h2 class="font-display-lg text-display-lg text-primary mb-4">Таїнство вінчання</h2>
+<div class="text-center md:text-left mb-6"><div class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md">11:00</div></div>
+<h2 class="font-display-lg text-display-lg text-primary mb-4 ceremony-title">Таїнство вінчання</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
                     Урочиста церемонія відбудеться в атмосфері спокою та величі старовинного костелу.
                 </p>
@@ -214,10 +229,14 @@
 <p class="text-on-surface-variant">Pod Homolí, 252 19 Rudná u Prahy</p>
 </div>
 </div>
+<div class="aspect-[4/5] overflow-hidden rounded-lg w-full md:hidden">
+<img class="w-full h-full object-cover" src="kostel.jpg"/>
+</div>
 
 </div>
-<div class="order-1 md:order-2 aspect-[4/5] overflow-hidden rounded-lg">
+<div class="order-1 md:order-2 aspect-[4/5] overflow-hidden rounded-lg w-full hidden md:block">
 <img class="w-full h-full object-cover" data-alt="A grand, architectural shot of an ancient European church interior with soaring vaulted ceilings and minimalist stone textures. Soft, natural light filters through tall stained-glass windows, creating an ethereal and sacred atmosphere. The image is clean, airy, and high-end, focusing on the timeless beauty of the sacred space." src="kostel.jpg"/>
+</div>
 </div>
 </section>
 <!-- SECTION 5: RECEPTION -->
@@ -282,7 +301,7 @@
 
 </section>
 
-<section class="py-section-gap flex flex-col items-center reveal">
+<section class="py-section-gap flex flex-col items-center reveal" id="gifts">
   <div class="relative w-full max-w-2xl mb-12 reveal">
     <img class="w-full h-auto" src="podaruki.png"/>
   </div>
@@ -299,12 +318,12 @@
 </section>
 </main>
 <!-- Bottom Navigation (Mobile Only) -->
-<footer class="md:hidden bg-surface dark:bg-inverse-surface border-t border-outline/10 shadow-[0_-4px_20px_0_rgba(77,100,83,0.05)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 rounded-t-full">
+<footer class="md:hidden bg-surface border-t border-outline/10 shadow-[0_-4px_20px_0_rgba(77,100,83,0.05)] fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 rounded-t-full">
 <a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-4 py-1 active:scale-95 transition-transform duration-200" href="#cover">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">favorite</span>
 <span class="font-label-md text-[10px]">Home</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200" href="#events">
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200" href="#invitation">
 <span class="material-symbols-outlined">calendar_today</span>
 <span class="font-label-md text-[10px]">Event</span>
 </a>
@@ -316,9 +335,9 @@
 <span class="material-symbols-outlined">palette</span>
 <span class="font-label-md text-[10px]">Style</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200" href="#rsvp">
-<span class="material-symbols-outlined">mail</span>
-<span class="font-label-md text-[10px]">RSVP</span>
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-variant/50 active:scale-95 transition-transform duration-200" href="#gifts">
+<span class="material-symbols-outlined">redeem</span>
+<span class="font-label-md text-[10px]">Gifts</span>
 </a>
 </footer>
 <script>
