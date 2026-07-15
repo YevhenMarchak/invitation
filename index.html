@@ -142,19 +142,6 @@
             background-repeat: no-repeat;
             background-size: cover;
         }
-        /* Force single-line title on mobile with shrinking font */
-        @media (max-width: 767px) {
-            .hero-title {
-                white-space: nowrap;
-                font-size: clamp(24px, 9vw, 48px);
-                line-height: 1.2;
-            }
-            .ceremony-title {
-                white-space: nowrap;
-                font-size: clamp(24px, 9vw, 48px);
-                line-height: 1.2;
-            }
-        }
     </style>
 </head>
 <body class="font-body-md text-body-md">
@@ -174,7 +161,7 @@
 <!-- SECTION 1: COVER -->
 <section class="min-h-screen flex flex-col items-center justify-center pt-16 pb-section-gap text-center" id="cover">
 <div class="mb-8 tracking-[0.3em] font-label-md text-label-md text-secondary opacity-80 reveal">ВЕСІЛЛЯ</div>
-<h1 class="font-display-lg text-display-lg md:text-[80px] text-primary mb-12 reveal hero-title">
+<h1 class="font-display-lg text-display-lg md:text-[80px] text-primary mb-12 reveal">
                 Андрій &amp; Вікторія
             </h1>
 <div class="relative w-full max-w-2xl aspect-[3/4] mb-12 overflow-hidden reveal">
@@ -218,7 +205,7 @@
 <div class="flex flex-col md:grid md:grid-cols-2 gap-12 md:items-center">
 <div class="order-2 md:order-1">
 <div class="text-center md:text-left mb-6"><div class="inline-block px-4 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-md text-label-md">11:00</div></div>
-<h2 class="font-display-lg text-display-lg text-primary mb-4 ceremony-title">Таїнство вінчання</h2>
+<h2 class="font-display-lg text-display-lg text-primary mb-4 text-center md:text-left">Таїнство вінчання</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">
                     Урочиста церемонія відбудеться в атмосфері спокою та величі старовинного костелу.
                 </p>
